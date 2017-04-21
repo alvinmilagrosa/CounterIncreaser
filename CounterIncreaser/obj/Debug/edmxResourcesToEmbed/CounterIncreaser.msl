@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CounterIncreaserDBModelStoreContainer" CdmEntityContainer="CounterIncreaserDBEntities">
+    <EntitySetMapping Name="CounterInformations">
+      <EntityTypeMapping TypeName="CounterIncreaserDBModel.CounterInformation">
+        <MappingFragment StoreEntitySet="CounterInformation">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CurrentNumber" ColumnName="CurrentNumber" />
+          <ScalarProperty Name="NumberAfterAdded" ColumnName="NumberAfterAdded" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spIncrementLog" FunctionName="CounterIncreaserDBModel.Store.spIncrementLog" />
+  </EntityContainerMapping>
+</Mapping>

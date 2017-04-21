@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounterIncreaserDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CounterIncreaserDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="CounterInformations" EntityType="CounterIncreaserDBModel.CounterInformation" />
+    <FunctionImport Name="spIncrementLog">
+      <Parameter Name="CurrentNumber" Mode="In" Type="Int32" />
+      <Parameter Name="NumberAfterAdded" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="CounterInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="CurrentNumber" Type="Int32" Nullable="false" />
+    <Property Name="NumberAfterAdded" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Type="String" Name="Status" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

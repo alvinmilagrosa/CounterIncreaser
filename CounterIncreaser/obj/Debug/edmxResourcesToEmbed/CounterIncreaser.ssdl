@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounterIncreaserDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CounterIncreaserDBModelStoreContainer">
+    <EntitySet Name="CounterInformation" EntityType="CounterIncreaserDBModel.Store.CounterInformation" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="CounterInformation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentNumber" Type="int" Nullable="false" />
+    <Property Name="NumberAfterAdded" Type="int" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="10" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="spIncrementLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CurrentNumber" Type="int" Mode="In" />
+    <Parameter Name="NumberAfterAdded" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

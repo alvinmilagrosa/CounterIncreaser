@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Increment </h2>
+<div ng-controller="HomeController">
+    <input type="text" ng-model="currentValue" name="uName" ng-readonly="true"/>
+    <input type="button" ng-click="Increment(currentValue)" value="Increment" />
+</div>
